@@ -1,0 +1,44 @@
+/* Navigation bar  */
+.navbar {
+    background-color: #e3f2fd;
+}
+
+.buttons {
+    background-color: white;
+}
+
+
+/* Entry Form */
+.inputForm {
+    width: 70%;
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+    background-color: #e3f2fd;
+}
+
+.submitBtn {
+    background-color: white;
+}
+
+/* Record Search */
+.table {
+    width: 80%;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    table-layout: fixed;
+}
+
+.table th {
+    background-color: #e3f2fd;
+}
+
+.searchID {
+    width: 40%;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 1%;
+}

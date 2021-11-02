@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images\file-earmark-text.svg">
+    <title>Formulario</title>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="images\index_icon.svg" width="30" height="30" class="d-inline-block align-text-top"
+                    alt="airplane">
+                Visas y Tramites
+                Internacionales
+            </a>
+            <div class="navbar-nav">
+                <form class="">
+                    <a class="btn btn-outline-secondary buttons" href="indexForm.html">Ingresar Datos</a>
+                    <a class="btn btn-outline-secondary buttons" href="indexSearch.php">Buscar Registro</a>
+                    <a class="btn btn-outline-secondary buttons" href="indexEdit.html">Editar Registro</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Form -->
+    <form action="includes\dbConnectionInput.php" method="POST" class="inputForm needs-validation" novalidate>
+        <!-- Names and Surnames -->
+        <div class="row ">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Primer Nombre"
+                        style="text-transform:uppercase" required>
+                    <label for="firstName">Primer Nombre</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese un nombre valido.
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="secondName" name="secondName"
+                        placeholder="Segundo Nombre" style="text-transform:uppercase">
+                    <label for="secondName">Segundo Nombre</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="firstSurname" name="firstSurname"
+                        placeholder="Primer Apellido" style="text-transform:uppercase" required>
+                    <label for="firstSurname">Primer Apellido</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese un apellido valido.
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="secondSurname" name="secondSurname"
+                        placeholder="Segundo Apellido" style="text-transform:uppercase">
+                    <label for="secondSurname">Segundo Apellido</label>
+                </div>
+            </div>
+        </div>
+        <!-- Id and Id Type -->
+        <div class="row">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="idNumb" name="idNumb" placeholder="Numero de Documento"
+                        style="text-transform:uppercase" required>
+                    <label for="idNumb">Numero de Documento</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese un numero de documento valido.
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="idType" name="idType" aria-label="Tipo de Documento" required>
+                        <option selected disabled value=""></option>
+                        <option value="CÉDULA DE CIUDADANÍA">CÉDULA DE CIUDADANÍA</option>
+                        <option value="CÉDULA DE EXTRANJERA">CÉDULA DE EXTRANJERA</option>
+                        <option value="PASAPORTE">PASAPORTE</option>
+                        <option value="TARJETA DE IDENTIDAD">TARJETA DE IDENTIDAD</option>
+                        <option value="REGISTRO DE NACIMIENTO">REGISTRO DE NACIMIENTO</option>
+                    </select>
+                    <label for="idType">Tipo de Documento</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese un tipo de documento valido.
+                </div>
+            </div>
+        </div>
+        <!-- Birthday, City And Country -->
+        <!-- TODO City and Country need to be updated to a select with all possible options -->
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="date" class="form-control text-center" id="birthday" name="birthday"
+                        placeholder="Fecha de Nacimiento" required>
+                    <label for="birthday">Fecha de Nacimiento</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese una fecha valida.
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="birthdayCity" name="birthdayCity"
+                        placeholder="Ciudad de Nacimiento" style="text-transform:uppercase" required>
+                    <label for="birthdayCity">Ciudad de Nacimiento</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese una ciudad valida.
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="birthdayCountry" name="birthdayCountry"
+                        placeholder="Ciudad de Nacimiento" style="text-transform:uppercase" required>
+                    <label for="birthdayCountry">País de Nacimiento</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese un país valido.
+                </div>
+            </div>
+        </div>
+        <!-- Gender and marital status -->
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="sexo" name="sexo" aria-label="Selecciona tu genero" required>
+                        <option selected disabled>Selecciona tu genero</option>
+                        <option value="MASCULINO">MASCULINO</option>
+                        <option value="FEMENINO">FEMENINO</option>
+                        <option value="OTRO">OTRO</option>
+                    </select>
+                    <label for="sexo">Genero</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese un genero valido.
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="maritalStatus" name="maritalStatus"
+                        aria-label="Selecciona tu estado civil" required>
+                        <option selected disabled value="">Selecciona tu estado civil</option>
+                        <option value="SOLTERO/A">SOLTERO/A</option>
+                        <option value="UNIÓN LIBRE O UNIÓN DE HECHO ">UNIÓN LIBRE O UNIÓN DE HECHO</option>
+                        <option value="SEPARADO/A">SEPARADO/A</option>
+                        <option value="DIVORCIADO/A">DIVORCIADO/A</option>
+                        <option value="VIUDO/A">VIUDO/A</option>
+                    </select>
+                    <label for="maritalStatus">Estado Civil</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese un estado civil valido.
+                </div>
+            </div>
+        </div>
+        <!-- Nationality -->
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nationality1" name="nationality1"
+                        placeholder="Primera Nacionalidad" style="text-transform:uppercase" required>
+                    <label for="nationality1">Primera Nacionalidad</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese una nacionalidad valida.
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nationality2" name="nationality2"
+                        placeholder="Segunda Nacionalidad" style="text-transform:uppercase">
+                    <label for="nationality2">Segunda Nacionalidad</label>
+                </div>
+            </div>
+        </div>
+        <!-- Phone numbers and email -->
+        <div class="row g-2">
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="phone" name="phone"
+                        placeholder="Numero de Telefono Fijo" style="text-transform:uppercase">
+                    <label for="phone">Numero de Telefono Fijo</label>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="celPhone" name="celPhone"
+                        placeholder="Numero de Telefono Celular" required>
+                    <label for="celPhone">Numero de Telefono Celular</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese un numero celular valido.
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                        style="text-transform:uppercase" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese una dirección email valida.
+                </div>
+            </div>
+        </div>
+        <!-- Submit button -->
+        <div class="d-grid gap-2 col-3 mx-auto">
+            <button class="submitBtn btn btn-outline-primary" type="submit">Enviar</button>
+        </div>
+    </form>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <!-- Validation -->
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>
